@@ -22,8 +22,8 @@ SET default_with_oids = true;
 --
 -- Name: gtfs_calendar_lookup; Type: TABLE; Schema: public; Owner: user
 --
-
-CREATE TABLE gtfs_calendar_lookup (
+BEGIN;
+CREATE TABLE IF NOT EXISTS gtfs_calendar_lookup (
     service_id character varying(32),
     translated character varying(32)
 );
@@ -45,7 +45,7 @@ Sunday-	Sunday
 {SAT}	Saturday
 {SUN}	Sunday
 \.
-
+COMMIT;
 
 --
 -- PostgreSQL database dump complete
